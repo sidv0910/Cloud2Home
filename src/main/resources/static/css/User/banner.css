@@ -1,0 +1,19 @@
+.header {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.banner {
+  width: 1519px;
+  max-height: 600px;
+  max-width: 100%;
+}
+
+.banner-text {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 65px;
+}

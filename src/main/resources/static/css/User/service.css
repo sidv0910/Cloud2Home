@@ -1,0 +1,25 @@
+.accordion .accordion-item:nth-of-type(odd) .accordion-button {
+	background-color: #ffffb3;
+}
+
+.accordion .accordion-item:nth-of-type(even) .accordion-button {
+	background-color: #ffe6e6;
+}
+
+.accordion .accordion-item .accordion-collapse .accordion-body .table {
+	margin-top: 20px;
+	margin-left: 10px;
+	width: 98%;
+}
+
+.accordion .accordion-item .accordion-collapse .accordion-body .table tbody tr td {
+	vertical-align: middle;
+}
+
+.accordion .accordion-item .accordion-collapse .accordion-body .table tbody tr:nth-of-type(odd) {
+	background-color: #d9f2e6;
+}
+
+.accordion .accordion-item .accordion-collapse .accordion-body .table tbody tr:nth-of-type(even) {
+	background-color: #ccebff;
+}

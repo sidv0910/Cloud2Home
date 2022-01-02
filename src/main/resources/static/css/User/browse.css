@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+ #card-container {
+	 position: relative;
+	 margin-top: 50px;
+	 margin-bottom: 50px;
+	 margin-left: 20px;
+	 margin-right: 20px;
+	 width: 270px;
+	 height: 300px;
+	 z-index: 1;
+	 perspective: 1000px;
+}
+ #card, #card2, #card3 {
+	 width: 100%;
+	 height: 100%;
+	 transform-style: preserve-3d;
+	 transition: all 0.8s linear;
+	 box-shadow: 5px 5px 15px rgba(0, 0, 0, .3);
+	 cursor: pointer;
+}
+ #card:hover {
+	 transform: rotateY(180deg);
+	 box-shadow: -5px 5px 15px rgba(0, 0, 0, .3);
+}
+ #card2:hover {
+	 transform: rotateY(-180deg);
+	 box-shadow: -5px 5px 15px rgba(0, 0, 0, .3);
+}
+ #card3:hover {
+	 transform: rotateX(180deg);
+	 box-shadow: 5px -5px 15px rgba(0, 0, 0, .3);
+}
+ #card3 .back {
+	 transform: rotateX(-180deg);
+}
+ .face {
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 backface-visibility: hidden;
+}
+ .back {
+	 display: flex;
+	 align-items: center;
+	 transform: rotateY(180deg);
+	 box-sizing: border-box;
+	 padding: 10px;
+	 text-align: center;
+	 opacity: 0.7;
+	 background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
+}
+ .back h1, .back p {
+	 font-family: 'Questrial', sans-serif;
+	 text-transform: uppercase;
+	 letter-spacing: 2px;
+}
+ .back h1 {
+	 font-size: 2.5em;
+	 font-weight: bolder;
+	 padding-top: 15px;
+	 color: #ff0000;
+}
+ .back p {
+	 font-size: 0.5em;
+}
+ .date {
+	 color: #d0b2af;
+}
+ 

@@ -4,7 +4,7 @@
 <jsp:include page="header.jsp">
 	<jsp:param name="title" value="Admin | Add Category" />
 	<jsp:param name="style" value="true" />
-	<jsp:param name="stylepath" value="addServices.css" />
+	<jsp:param name="stylepath" value="addCategory.css" />
 	<jsp:param name="script" value="false" />
 	<jsp:param name="services" value="active" />
 </jsp:include>

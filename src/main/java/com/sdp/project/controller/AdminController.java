@@ -215,6 +215,63 @@ public class AdminController {
 				else
 				{
 					session.invalidate();
+					mv.setViewName("redirect:/admin");
+				}
+			}
+			else
+			{
+				session.invalidate();
+				mv.setViewName("redirect:/admin");
+			}
+		}
+		else
+		{
+			mv.setViewName("redirect:/admin");
+		}
+		return mv;
+	}
+	
+	@RequestMapping(value="/admin/addCategory", method=RequestMethod.POST)
+	public ModelAndView adminAddCategoryPost(HttpServletRequest request, @RequestParam("service") String service, @RequestParam("category") String category, @RequestParam("subcategory") String subcategory, @RequestParam("price") double price) throws Exception, IOException
+	{
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession(false);
+		if (session != null)
+		{
+			if (session.getAttribute("role") != null && session.getAttribute("username") != null)
+			{
+				String role = session.getAttribute("role").toString();
+				String username = session.getAttribute("username").toString();
+				if (role.equals("admin") && username.equals("ProjectAdmin"))
+				{
+					if (serviceRepo.findById(service).isPresent())
+					{
+						mv.setViewName("/Admin/addCategory");
+						mv.addObject("status", "false");
+						mv.addObject("message", "Service Already Exists!");
+						mv.addObject("button", "Retry");
+						mv.addObject("url", "/admin/addServices");
+					}
+					else
+					{
+						Services s = new Services();
+						
+						SubCategory sc = new SubCategory(subcategory, price);
+						Category c = new Category(category, Arrays.asList(sc));
+						
+						
+						//serviceRepo.save(serv);
+						
+						mv.setViewName("/Admin/home");
+						mv.addObject("status", "true");
+						mv.addObject("message", "Service Added Successfully!");
+						mv.addObject("button", "OK");
+						mv.addObject("url", "/admin");
+					}
+				}
+				else
+				{
+					session.invalidate();
 					mv.setViewName("redirect:/Admin");
 				}
 			}
